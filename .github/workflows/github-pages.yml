@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # если у тебя ветка называется иначе (например, master) — измени это
+      - main  
 
 permissions:
   contents: read
