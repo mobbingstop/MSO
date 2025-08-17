@@ -31,12 +31,26 @@
     }
     .language-switch {
       margin-right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .language-switch a {
       color: white;
-      margin-left: 10px;
       text-decoration: underline;
       cursor: pointer;
+    }
+    .login-btn {
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .login-btn:hover {
+      background-color: #0056b3;
     }
     .nav-toggle {
       display: none;
@@ -87,24 +101,12 @@
       background-repeat: no-repeat;
     }
 
-    section.bg-about {
-      background-image: url('about-bg.jpg');
-    }
-    section.bg-mobbing {
-      background-image: url('mobbing-bg.png');
-    }
-    section.bg-achievements {
-      background-image: url('achievements-bg.jpg');
-    }
-    section.bg-resources {
-      background-image: url('resources-bg.jpg');
-    }
-    section.bg-partners {
-      background-image: url('partners-bg.jpg');
-    }
-    section.bg-contacts {
-      background-image: url('contacts-bg.jpg');
-    }
+    section.bg-about { background-image: url('about-bg.jpg'); }
+    section.bg-mobbing { background-image: url('mobbing-bg.png'); }
+    section.bg-achievements { background-image: url('achievements-bg.jpg'); }
+    section.bg-resources { background-image: url('resources-bg.jpg'); }
+    section.bg-partners { background-image: url('partners-bg.jpg'); }
+    section.bg-contacts { background-image: url('contacts-bg.jpg'); }
 
     section.bg-about::before,
     section.bg-mobbing::before,
@@ -144,9 +146,7 @@
       justify-content: center;
       gap: 20px;
     }
-    .partner-logo {
-      flex: 0 1 120px;
-    }
+    .partner-logo { flex: 0 1 120px; }
     .partner-logo img {
       width: 100%;
       max-width: 120px;
@@ -154,9 +154,7 @@
       border-radius: 8px;
     }
 
-    #lv, #en {
-      transition: opacity 0.5s ease-in-out;
-    }
+    #lv, #en { transition: opacity 0.5s ease-in-out; }
 
     #topBtn {
       display: none;
@@ -178,22 +176,14 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      header img {
-        margin-bottom: 10px;
-      }
+      header img { margin-bottom: 10px; }
       .language-switch {
         margin-top: 10px;
         margin-left: 0;
       }
-      .nav-toggle {
-        display: block;
-      }
-      nav {
-        display: none;
-      }
-      nav.show {
-        display: block;
-      }
+      .nav-toggle { display: block; }
+      nav { display: none; }
+      nav.show { display: block; }
       nav a {
         display: block;
         text-align: left;
@@ -211,9 +201,20 @@
     </div>
   </div>
   <div class="language-switch" aria-label="Valodas maiņa">
-    <a onclick="switchLang('lv')">LV</a> | <a onclick="switchLang('en')">EN</a>
+    <a onclick="switchLang('lv')">LV</a> | 
+    <a onclick="switchLang('en')">EN</a>
+    <!-- Кнопка входа на внешний сайт -->
+    <a
+      id="loginLink"
+      href="https://mobbingstop.org/wp-login.php?"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="login-btn"
+      aria-label="Ieiet (atvērsies jaunā cilnē)"
+    >Pieslēgties</a>
   </div>
 </header>
+
 <div class="nav-toggle" onclick="toggleMenu()">&#9776; Izvēlne</div>
 <nav>
   <div id="nav-lv">
@@ -233,6 +234,7 @@
     <a href="#contacts-en">Contact</a>
   </div>
 </nav>
+
 <main>
   <div id="lv" lang="lv">
     <section id="about-lv" class="bg-about">
@@ -241,62 +243,54 @@
 MSO ir organizācija, kas izstrādā un ievieš risinājumus, lai novērstu mobingu, emocionālo vardarbību un veidotu atbalstošu izglītības vidi skolās un pirmsskolās.<br><br><b>Galvenie virzieni</b><br><br>
 <b>MobbingStop</b><br>
 Digitālā programma skolām:<br>
-•	Metodiskie videomateriāli ar psihologu izstrādātiem jautājumiem;<br>
-•	Ikdienas emociju atzīmēšana un statistika skolēnu profilā;<br>
-•	Klases un skolas emocionālā klimata uzraudzība;<br>
-•	Pārskatāmi dati pedagogiem.<br>
- <b>MobbingStop Pirmsskola</b><br>
+• Metodiskie videomateriāli ar psihologu izstrādātiem jautājumiem;<br>
+• Ikdienas emociju atzīmēšana un statistika skolēnu profilā;<br>
+• Klases un skolas emocionālā klimata uzraudzība;<br>
+• Pārskatāmi dati pedagogiem.<br>
+<b>MobbingStop Pirmsskola</b><br>
 Sagatavo bērnus skolas dzīvei:<br>
-•	Videomateriāli ar pareizas un nepareizas uzvedības piemēriem;<br>
-•	Lomu spēles un diskusijas pēc skatīšanās;<br>
-•	Attīsta emocionālo inteliģenci un sociālās prasmes;<br>
-•	Veicina bērna izpratni par drošu un atbalstošu vidi.<br><br><b>Mūsu pieeja</b><br>
+• Videomateriāli ar pareizas un nepareizas uzvedības piemēriem;<br>
+• Lomu spēles un diskusijas pēc skatīšanās;<br>
+• Attīsta emocionālo inteliģenci un sociālās prasmes;<br>
+• Veicina bērna izpratni par drošu un atbalstošu vidi.<br><br><b>Mūsu pieeja</b><br>
 Zinātnē balstīti risinājumi, psihologu izstrādātas metodes, ciešs darbs ar izglītības iestādēm un vecākiem.
 </p>
-
     </section>
+
     <section id="what-is-mobbing-lv" class="bg-mobbing">
       <h2>Kas ir mobings un bulings izglītības iestādēs?</h2>
-      <p>Mobings un bulings ir sistemātiska, atkārtota un apzināta rīcība, kuras mērķis ir pazemot, izolēt vai psiholoģiski ietekmēt citu personu — bieži vien vienaudzi vai skolēnu, kurš tiek uzskatīts par "vājo posmu". Šīs darbības var izpausties gan fiziski, gan emocionāli, gan digitāli (kiberbulings).
-
-<br><br><b>Raksturīgākās pazīmes:</b><br>
-•  Pastāvīgi izsmiekli, apsaukāšana vai nievājoši komentāri;<br>
-
-•  Ignorēšana, izstumšana no kolektīva vai grupām;<br>
-
-•  Draudi, iebiedēšana vai agresīva ķermeņa valoda;<br>
-
-•  Lietu bojāšana vai nozagšana;<br>
-
-•  Apmelošana, baumu izplatīšana, tostarp arī tiešsaistē;<br>
-
-•  Emocionālas izmaiņas bērnā — trauksme, nevēlēšanās iet uz skolu, pēkšņs kritums sekmēs.<br><br>
-
+      <p>Mobings un bulings ir sistemātiska, atkārtota un apzināta rīcība, kuras mērķis ir pazemot, izolēt vai psiholoģiski ietekmēt citu personu — bieži vien vienaudzi vai skolēnu, kurš tiek uzskatīts par "vājo posmu". Šīs darbības var izpausties gan fiziski, gan emocionāli, gan digitāli (kiberbulings).<br><br>
+<b>Raksturīgākās pazīmes:</b><br>
+• Pastāvīgi izsmiekli, apsaukāšana vai nievājoši komentāri;<br>
+• Ignorēšana, izstumšana no kolektīva vai grupām;<br>
+• Draudi, iebiedēšana vai agresīva ķermeņa valoda;<br>
+• Lietu bojāšana vai nozagšana;<br>
+• Apmelošana, baumu izplatīšana, tostarp arī tiešsaistē;<br>
+• Emocionālas izmaiņas bērnā — trauksme, nevēlēšanās iet uz skolu, pēkšņs kritums sekmēs.<br><br>
 <b>Kāpēc tas ir svarīgi?</b><br>
 Mobings un bulings negatīvi ietekmē bērna pašvērtējumu, emocionālo attīstību un vēlāk arī spēju socializēties pieaugušo dzīvē. Laicīga atpazīšana un iejaukšanās ir būtiska, lai veidotu drošu, iekļaujošu un atbalstošu mācību vidi.</p>
     </section>
+
     <section id="achievements-lv" class="bg-achievements">
       <h2>Sasniegumi</h2>
-      <p>Mūsu programma darbojas vairākās skolās un pirmsskolas visā Latvijā un ir palīdzējusi samazināt mobingu un agressijas līmenī.
-<br><br><b>Sasniegumi un sadarbība</b><br>
-•  2024. gada 13. jūnijs – SEB bankas grantu konkursa “Augšup” finālists<br>
-
-•  2024. gada 26. novembris – SEB bankas granta konkursa “Iedvesma” biznesa idejas MobbingStop granta ieguvēji<br>
-
-•  2025. gada 12. jūnijs – SEB bankas granta konkursa “Augšup” biznesa idejas MobbingStop Pirmsskola granta ieguvēji<br>
-
-•  Sadarbība ar Latvijas Veselības ministriju<br>
-
-•  Sadarbība ar Rīgas pašvaldības policijas Vardarbības un prevencijas nodaļu, izmantojot MobbingStop programmu.</p>
+      <p>Mūsu programma darbojas vairākās skolās un pirmsskolas visā Latvijā un ir palīdzējusi samazināt mobingu un agressijas līmenī.<br><br>
+<b>Sasniegumi un sadarbība</b><br>
+• 2024. gada 13. jūnijs – SEB bankas grantu konkursa “Augšup” finālists<br>
+• 2024. gada 26. novembris – SEB bankas granta konkursa “Iedvesma” biznesa idejas MobbingStop granta ieguvēji<br>
+• 2025. gada 12. jūnijs – SEB bankas granta konkursa “Augšup” biznesa idejas MobbingStop Pirmsskola granta ieguvēji<br>
+• Sadarbība ar Latvijas Veselības ministriju<br>
+• Sadarbība ar Rīgas pašvaldības policijas Vardarbības un prevencijas nodaļu, izmantojot MobbingStop programmu.</p>
     </section>
+
     <section id="resources-lv" class="bg-resources">
       <h2>Mūsu izveidotas programmas</h2>
       <p>MobbingStop — Droša vide sākas šeit!</p>
-<div class="partner-logos">
+      <div class="partner-logos">
         <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program1.png" alt="Partneris 1"></a></div>
-        <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program2.png" alt="Partneris 2"></a></div>      
-  </div>
+        <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program2.png" alt="Partneris 2"></a></div>
+      </div>
     </section>
+
     <section id="partners-lv" class="bg-partners">
       <h2>Partneri</h2>
       <div class="partner-logos">
@@ -306,18 +300,18 @@ Mobings un bulings negatīvi ietekmē bērna pašvērtējumu, emocionālo attīs
         <div class="partner-logo"><a href="https://nmpd.gov.lv" target="_blank"><img src="partner4.png" alt="Partneris 4"></a></div>
         <div class="partner-logo"><a href="https://seb.lv" target="_blank"><img src="partner5.png" alt="Partneris 5"></a></div>
       </div>
-</section>
-    <section id="contacts-lv" class="bg-contacts">
+    </section>
 
-  <h2>Kontakti</h2>
-  <p><b>MSO SIA</b> <br>Reģistrācijas numurs: 40203591259<br>
-  Ropažu nov., Stopiņu pag., Saurieši, Pludmales iela 7,<br>
-  Latvija<br>
-  BluOr Banka<br>
-  LV25 CBBR 112B 3387 0001 0<br>
-  Tālrunis: +371 26456404<br>
-  E-pasts: info@mso.lv</p>
-</section>
+    <section id="contacts-lv" class="bg-contacts">
+      <h2>Kontakti</h2>
+      <p><b>MSO SIA</b> <br>Reģistrācijas numurs: 40203591259<br>
+      Ropažu nov., Stopiņu pag., Saurieši, Pludmales iela 7,<br>
+      Latvija<br>
+      BluOr Banka<br>
+      LV25 CBBR 112B 3387 0001 0<br>
+      Tālrunis: +371 26456404<br>
+      E-pasts: info@mso.lv</p>
+    </section>
   </div>
 
   <div id="en" lang="en" style="display: none;">
@@ -327,85 +321,59 @@ Mobings un bulings negatīvi ietekmē bērna pašvērtējumu, emocionālo attīs
 MSO is an organization that develops and implements solutions to prevent bullying, emotional abuse, and to create a supportive educational environment in schools and preschools.<br><br><b>Key areas</b><br>
 <br><b>MobbingStop</b><br>
 A digital program for schools:<br>
-
-•  Methodological video materials with psychologist-designed questions;<br>
-
-•  Daily emotional check-ins and statistics in the student profile;<br>
-
-•  Monitoring of classroom and school emotional climate;<br>
-
-•  Clear and accessible data for teachers.<br>
-
-<b> MobbingStop Pirmsskola</b><br>
+• Methodological video materials with psychologist-designed questions;<br>
+• Daily emotional check-ins and statistics in the student profile;<br>
+• Monitoring of classroom and school emotional climate;<br>
+• Clear and accessible data for teachers.<br>
+<b>MobbingStop Pirmsskola</b><br>
 Preparing children for school life:<br>
-
-•  Video materials showing examples of both incorrect and correct behavior;<br>
-
-•  Role-playing and discussions after viewing;<br>
-
-•  Develops emotional intelligence and social skills;<br>
-
-•  Promotes the child’s understanding of a safe and supportive environment.<br><br>
+• Video materials showing examples of both incorrect and correct behavior;<br>
+• Role-playing and discussions after viewing;<br>
+• Develops emotional intelligence and social skills;<br>
+• Promotes the child’s understanding of a safe and supportive environment.<br><br>
 <b>Our approach</b><br>
 Science-based solutions, psychologist-developed methods, and close cooperation with educational institutions and parents.
 </p>
     </section>
+
     <section id="what-is-mobbing-en" class="bg-mobbing">
       <h2>What is mobbing and bullying in educational institutions?</h2>
-      <p>Mobbing and bullying are systematic, repeated, and intentional actions aimed at humiliating, isolating, or psychologically harming another person — often a peer or a student perceived as “weaker.” These behaviors can be physical, emotional, or digital (cyberbullying).
-
-<br><br><b>Common signs include:</b><br>
-•  Constant mocking, name-calling, or demeaning comments;<br>
-
-•  Ignoring or excluding someone from a group or collective activities;<br>
-
-•  Threats, intimidation, or aggressive body language;<br>
-
-•  Damaging or stealing personal belongings;<br>
-
-•  Spreading rumors or lies, including online (cyberbullying);<br>
-
-•  Emotional changes in the child — anxiety, refusal to go to school, sudden drop in academic performance.<br><br>
-
+      <p>Mobbing and bullying are systematic, repeated, and intentional actions aimed at humiliating, isolating, or psychologically harming another person — often a peer or a student perceived as “weaker.” These behaviors can be physical, emotional, or digital (cyberbullying).<br><br>
+<b>Common signs include:</b><br>
+• Constant mocking, name-calling, or demeaning comments;<br>
+• Ignoring or excluding someone from a group or collective activities;<br>
+• Threats, intimidation, or aggressive body language;<br>
+• Damaging or stealing personal belongings;<br>
+• Spreading rumors or lies, including online (cyberbullying);<br>
+• Emotional changes in the child — anxiety, refusal to go to school, sudden drop in academic performance.<br><br>
 <b>Why is this important?</b><br>
 Bullying and mobbing negatively impact a child’s self-esteem, emotional development, and future ability to socialize and succeed. Early recognition and timely intervention are essential for creating a safe, inclusive, and supportive educational environment.
-
 </p>
     </section>
 
     <section id="achievements-en" class="bg-achievements">
       <h2>Achievements</h2>
-      <p>Our program is implemented in multiple schools and preschools across Latvia and has helped reduce bullying and levels of aggression.<br>
-<br><b>Achievements and Partnerships</b><br>
-•  June 13, 2024 – Finalist of SEB Bank’s “Augšup” grant competition<br>
-
-•  November 26, 2024 – Grant winner of SEB Bank’s “Iedvesma” business idea competition for MobbingStop<br>
-
-•  June 12, 2025 – Grant winner of SEB Bank’s “Augšup” competition for the business idea MobbingStop Pirmsskola<br>
-
-•  Partnership with the Ministry of Health of Latvia<br>
-
-•  Collaboration with the Riga Municipal Police’s Department for Violence Prevention, using the MobbingStop program</p>
+      <p>Our program is implemented in multiple schools and preschools across Latvia and has helped reduce bullying and levels of aggression.<br><br>
+<b>Achievements and Partnerships</b><br>
+• June 13, 2024 – Finalist of SEB Bank’s “Augšup” grant competition<br>
+• November 26, 2024 – Grant winner of SEB Bank’s “Iedvesma” business idea competition for MobbingStop<br>
+• June 12, 2025 – Grant winner of SEB Bank’s “Augšup” competition for the business idea MobbingStop Pirmsskola<br>
+• Partnership with the Ministry of Health of Latvia<br>
+• Collaboration with the Riga Municipal Police’s Department for Violence Prevention, using the MobbingStop program
+</p>
     </section>
-
-
 
     <section id="resources-en" class="bg-resources">
       <h2>Programs Created by Us</h2>
-      <p>MobbingStop — A Safe Environment Starts Here!
-</p>
-
-<div class="partner-logos">
-        <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program1.png" alt="Partneris 1"></a></div>
-        <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program2.png" alt="Partneris 2"></a></div>
-</div>
-
-
+      <p>MobbingStop — A Safe Environment Starts Here!</p>
+      <div class="partner-logos">
+        <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program1.png" alt="Partner 1"></a></div>
+        <div class="partner-logo"><a href="https://mobbingstop.org" target="_blank"><img src="program2.png" alt="Partner 2"></a></div>
+      </div>
     </section>
+
     <section id="partners-en" class="bg-partners">
-
       <h2>Partners</h2>
-
       <div class="partner-logos">
         <div class="partner-logo"><a href="https://akvile.lv" target="_blank"><img src="partner1.png" alt="Partner 1"></a></div>
         <div class="partner-logo"><a href="https://zakumuiza.lv" target="_blank"><img src="partner2.png" alt="Partner 2"></a></div>
@@ -413,24 +381,27 @@ Bullying and mobbing negatively impact a child’s self-esteem, emotional develo
         <div class="partner-logo"><a href="https://nmpd.gov.lv" target="_blank"><img src="partner4.png" alt="Partner 4"></a></div>
         <div class="partner-logo"><a href="https://seb.lv" target="_blank"><img src="partner5.png" alt="Partner 5"></a></div>
       </div>
-</section>
-    <section id="contacts-en" class="bg-contacts">
+    </section>
 
-  <h2>Contact</h2>
-  <p><b>MSO SIA</b> <br>Registration number: 40203591259<br>
-  Ropažu nov., Stopiņu pag., Saurieši, Pludmales iela 7,<br>
-  Latvia<br>
-BluOr Bank<br>
-  LV25 CBBR 112B 3387 0001 0<br>
-  Phone: +371 26456404<br>
-  Email: info@mso.lv</p>
-</section>
+    <section id="contacts-en" class="bg-contacts">
+      <h2>Contact</h2>
+      <p><b>MSO SIA</b> <br>Registration number: 40203591259<br>
+      Ropažu nov., Stopiņu pag., Saurieši, Pludmales iela 7,<br>
+      Latvia<br>
+      BluOr Bank<br>
+      LV25 CBBR 112B 3387 0001 0<br>
+      Phone: +371 26456404<br>
+      Email: info@mso.lv</p>
+    </section>
   </div>
 </main>
+
 <button onclick="topFunction()" id="topBtn" title="Uz augšu">&uarr;</button>
+
 <footer>
   <p>© 2025 MobbingStop | All rights reserved</p>
 </footer>
+
 <script>
   function switchLang(lang) {
     document.getElementById("lv").style.display = lang === "lv" ? "block" : "none";
@@ -440,17 +411,33 @@ BluOr Bank<br>
     document.getElementById("slogan").innerText = lang === "lv"
       ? "Drošāka nākotne bērniem un skolām"
       : "A safer future for children and schools";
+
+    // Локализация кнопки входа
+    const loginLink = document.getElementById("loginLink");
+    if (loginLink) {
+      if (lang === "lv") {
+        loginLink.textContent = "Ieiet";
+        loginLink.setAttribute("aria-label", "Ieiet (atvērsies jaunā cilnē)");
+      } else {
+        loginLink.textContent = "Sign in";
+        loginLink.setAttribute("aria-label", "Sign in (opens in a new tab)");
+      }
+    }
   }
+
   function toggleMenu() {
     document.querySelector("nav").classList.toggle("show");
   }
+
   window.onscroll = function () {
     const btn = document.getElementById("topBtn");
     btn.style.display = document.documentElement.scrollTop > 100 ? "block" : "none";
   };
+
   function topFunction() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
 </body>
 </html>
+
